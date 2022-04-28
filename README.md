@@ -17,8 +17,7 @@
 - Gerkin Language
 
 >Language Code
-- Java,
-- Json Schema
+- Java
 
 >Team
 - Agung firmansyah,
