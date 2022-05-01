@@ -17,10 +17,16 @@ public class VerifyDisplayed {
             case "Login Successfull":
                 element = LoginObjects.LOGIN_Successfull;
                 break;
+            case "User Not Found":
+                element = LoginObjects.USER_NOT_FOUND;
+                break;
+            case "Password Incorrect":
+                element = LoginObjects.PASSWORD_INCORRECT;
+                break;
             default:
                 throw new Exception("There is no element type: "+ elementType);
         }
-        WaitUntil.the(element, isVisible()).forNoMoreThan(100).seconds();
+        WaitUntil.the(element, isVisible()).forNoMoreThan(1000).seconds();
         return Task.where("{0} verify element is displayed", Ensure.that(element).isDisplayed());
     }
 }

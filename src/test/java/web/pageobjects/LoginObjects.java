@@ -15,5 +15,9 @@ public class LoginObjects extends PageObject {
     public static Target LOGIN_BUTTON = Target.the("login button")
             .locatedBy("#login-button");
     public static Target LOGIN_Successfull = Target.the("login successfull")
-            .locatedBy("//div[@text='Successfully logged in']");
+            .locatedBy("//*[text()='Successfully logged in']");
+    public static Target USER_NOT_FOUND = Target.the("user not found")
+            .locatedBy("//*[text()='user not found']");
+    public static Target PASSWORD_INCORRECT = Target.the("password incorrect")
+            .locatedBy("//*[text()='password incorrect']");
 }

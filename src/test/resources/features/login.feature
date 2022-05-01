@@ -6,14 +6,14 @@ Feature: Booking Sport Arena - Login
     Given user already in login page
     When user already fill email & password
     And user login button clicked
-    Then user can see pop up successfully log in
+    Then user can see pop up Successfully logged in
 
   @admin_login_positif
   Scenario: admin login successfull
     Given admin already in login page
     When admin already fill email & password
     And admin login button clicked
-    Then admin will directed to admin dashboard page
+    Then admin can see pop up Successfully logged in
 
   @login_negatif
   Scenario: user login unsuccessfull

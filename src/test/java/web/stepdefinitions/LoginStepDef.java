@@ -23,7 +23,7 @@ public class LoginStepDef {
         String email = "";
         String password = "";
 
-        if(act == "user"){
+        if (act.equals("user")){
             email = dotenv.get("EMAIL_USER");
             password = dotenv.get("PASSWORD_USER");
         }
@@ -31,6 +31,7 @@ public class LoginStepDef {
             email = dotenv.get("EMAIL_ADMIN");
             password = dotenv.get("PASSWORD_ADMIN");
         }
+
 
         actor.attemptsTo(
                 InputText.onField("Email", email),
@@ -80,26 +81,26 @@ public class LoginStepDef {
         );
     }
 
-    @Then("{actor} can see pop up successfully log in")
+    @Then("{actor} can see pop up Successfully logged in")
     public void validateLoginSuccess(Actor actor)throws Exception{
         actor.attemptsTo(
                 VerifyDisplayed.element("Login Successfull")
         );
     }
 
-    @Then("{actor} will directed to admin dashboard page")
-    public void validateAdminLoginSuccess(Actor actor)throws Exception{
-
-    }
 
     @Then("{actor} can see pop up message will appear indicated user not found")
     public void validateUserNotFound(Actor actor)throws Exception{
-
+        actor.attemptsTo(
+                VerifyDisplayed.element("User Not Found")
+        );
     }
 
     @Then("{actor} can see pop up message will appear indicated password incorrect")
     public void validatePasswordIncorrect(Actor actor)throws Exception{
-
+        actor.attemptsTo(
+                VerifyDisplayed.element("Password Incorrect")
+        );
     }
 
 }
