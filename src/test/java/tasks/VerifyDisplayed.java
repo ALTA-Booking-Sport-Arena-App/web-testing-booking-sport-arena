@@ -6,6 +6,7 @@ import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import web.pageobjects.LoginObjects;
+import web.pageobjects.RegisterObjects;
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -22,6 +23,12 @@ public class VerifyDisplayed {
                 break;
             case "Password Incorrect":
                 element = LoginObjects.PASSWORD_INCORRECT;
+                break;
+            case "Register Successfull":
+                element = RegisterObjects.REGISTER_SUCCESSFULL;
+                break;
+            case "Register Failed":
+                element = RegisterObjects.REGISTER_FAILED;
                 break;
             default:
                 throw new Exception("There is no element type: "+ elementType);
