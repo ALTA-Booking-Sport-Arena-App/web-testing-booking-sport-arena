@@ -19,13 +19,13 @@ Feature: Register
     And user click button register
     Then user can see show popup alert message register failed
 
-  @register_negatif
+  @register_negatif_email
   Scenario: user create account with email without "@domain"
     Given user alredy in web Sport Arena
     And user alredy on register page
     When user input new account in email without domain required field only
     And user click button register
-    Then user can see show popup alert message register failed
+    Then user can see show alert message email tidak valid
 
   @register_negatif
   Scenario: user create account with registered email

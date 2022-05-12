@@ -5,6 +5,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import web.pageobjects.BookingObjects;
 import web.pageobjects.LoginObjects;
 import web.pageobjects.RegisterObjects;
 
@@ -30,10 +31,16 @@ public class VerifyDisplayed {
             case "Register Failed":
                 element = RegisterObjects.REGISTER_FAILED;
                 break;
+            case "Booking Status":
+                element = BookingObjects.PENDING_STATUS;
+                break;
+            case "Validate Booking":
+                element = BookingObjects.VALIDATE_BOOKING;
+                break;
             default:
                 throw new Exception("There is no element type: "+ elementType);
         }
-        WaitUntil.the(element, isVisible()).forNoMoreThan(1000).seconds();
+        WaitUntil.the(element, isVisible()).forNoMoreThan(5000).seconds();
         return Task.where("{0} verify element is displayed", Ensure.that(element).isDisplayed());
     }
 }

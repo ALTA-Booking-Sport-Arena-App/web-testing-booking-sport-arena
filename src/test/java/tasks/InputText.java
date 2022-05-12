@@ -4,6 +4,7 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.targets.Target;
+import web.pageobjects.BookingObjects;
 import web.pageobjects.LoginObjects;
 import web.pageobjects.RegisterObjects;
 
@@ -35,6 +36,9 @@ public class InputText {
                 break;
             case "Register Confirm Password":
                 field = RegisterObjects.CONFIRM_PASSWORD_FIELD;
+                break;
+            case "Search":
+                field = BookingObjects.INPUT_SEARCH;
                 break;
             default:
                 throw new Exception("There is no field type: " + fieldType);

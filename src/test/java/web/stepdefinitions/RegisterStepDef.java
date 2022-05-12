@@ -120,7 +120,7 @@ public class RegisterStepDef {
         );
     }
 
-    @Then("{actor} can see show popup alert message register failed")
+    @Then("{actor} can see show alert message email tidak valid")
     public void validationRegisterFailed(Actor actor)throws Exception{
         actor.attemptsTo(
                 VerifyDisplayed.element("Register Failed")

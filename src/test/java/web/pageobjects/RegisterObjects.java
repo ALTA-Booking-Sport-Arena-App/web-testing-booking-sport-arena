@@ -21,7 +21,7 @@ public class RegisterObjects extends PageObject {
     public static Target REGISTER_BUTTON = Target.the("register button")
             .locatedBy("#register-button");
     public static Target REGISTER_FAILED = Target.the("register failed")
-            .locatedBy("//*[text()='register failed']");
+            .locatedBy("//*[text()='Email tidak valid']");
     public static Target REGISTER_SUCCESSFULL = Target.the("register successfull")
             .locatedBy("//*[text()='successfully registered']");
     public static Target HOMEPAGE_MENU = Target.the("homepage menu")
