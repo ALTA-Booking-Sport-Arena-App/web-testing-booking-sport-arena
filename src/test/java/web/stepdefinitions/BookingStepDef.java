@@ -2,10 +2,7 @@ package web.stepdefinitions;
 import io.cucumber.java.en.*;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.ensure.Ensure;
-import tasks.ClickOn;
-import tasks.InputText;
-import tasks.NavigateTo;
-import tasks.VerifyDisplayed;
+import tasks.*;
 
 import java.util.Random;
 
@@ -23,8 +20,8 @@ public class BookingStepDef {
         firstName = firstName();
         lastName = lastName();
         fullName = firstName + " " + lastName;
-        userName = firstName + new Random().nextInt(10);
-        email = firstName + lastName + new Random().nextInt(10) + "@mail.com";
+        userName = firstName + new Random().nextInt(100);
+        email = firstName + lastName + new Random().nextInt(100) + "@mail.com";
         phone = phoneNumber();
         password = "12345";
 
@@ -56,18 +53,19 @@ public class BookingStepDef {
     @When("{actor} booked venue sport arena")
     public void bookedVenue(Actor actor)throws Exception{
         actor.attemptsTo(
-                InputText.onField("Search", "king futsal"),
+                InputText.onField("Search", "central"),
                 ClickOn.button("Search"),
                 ClickOn.button("Select Venue"),
                 ClickOn.button("Select Day"),
-                ClickOn.button("Select Time")
+                ClickOn.button("Select Time"),
+                ClickOn.button("Booking Now")
         );
 
     }
     @And("{actor} create payment")
     public void createPayment(Actor actor)throws Exception{
         actor.attemptsTo(
-//                VerifyDisplayed.element("Payment Gateway"),
+                SwitchToNewWindow.switchToNewTab(),
                 ClickOn.button("Select Payment"),
                 ClickOn.button("Select Bank"),
                 ClickOn.button("See Number Rekening"),
@@ -76,7 +74,7 @@ public class BookingStepDef {
     }
 
     //Validate
-    @Then("{actor} successfully create booked venue")
+    @Then("{actor} can see price to booked")
     public void validateBooked(Actor actor)throws Exception{
         actor.attemptsTo(
 //                Ensure.thatTheCurrentPage().currentUrl().contains("/user/history#"),

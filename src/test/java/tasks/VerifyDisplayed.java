@@ -31,6 +31,9 @@ public class VerifyDisplayed {
             case "Register Failed":
                 element = RegisterObjects.REGISTER_FAILED;
                 break;
+            case "Validate Email":
+                element = RegisterObjects.VALIDATE_EMAIL;
+                break;
             case "Booking Status":
                 element = BookingObjects.PENDING_STATUS;
                 break;

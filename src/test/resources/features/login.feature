@@ -1,5 +1,5 @@
 @login
-Feature: Booking Sport Arena - Login
+Feature: Login
 
   @user_login_positif
   Scenario: user login successfull

@@ -15,11 +15,11 @@ public class BookingObjects extends PageObject {
     public static Target SEARCH_BUTTON = Target.the("search button")
             .locatedBy("#search-button");
     public static Target SELECT_VENUE = Target.the("select venue")
-            .locatedBy("#venue-15");
+            .locatedBy("#venue-19");
     public static Target SELECT_DAY = Target.the("select day")
-            .locatedBy("#day-4");
+            .locatedBy("#day-5");
     public static Target SELECT_TIME = Target.the("select time")
-            .locatedBy("//*[text()='12.00']");
+            .locatedBy("//*[text()='15.00']");
     public static Target BOOKING_BUTTON = Target.the("booking button")
             .locatedBy("#booking-button");
     public static Target SELECT_PAYMENT = Target.the("select payment")
@@ -33,7 +33,7 @@ public class BookingObjects extends PageObject {
     public static Target PENDING_STATUS = Target.the("pending status")
             .locatedBy("//*[text()='pending']");
     public static Target VALIDATE_BOOKING = Target.the("validate booking")
-            .locatedBy("//*[text()='Booking status']");
+            .locatedBy("//*[text()='Rp. 200,000']");
 
 
 }

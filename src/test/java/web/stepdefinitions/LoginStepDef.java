@@ -83,7 +83,18 @@ public class LoginStepDef {
 
     @Then("{actor} can see pop up Successfully logged in")
     public void validateLoginSuccess(Actor actor)throws Exception{
+        String act = actor.getName();
+        String link;
+
+        if (act.equals("user")){
+            link = "/user";
+        }
+        else {
+            link = "/admin";
+        }
+
         actor.attemptsTo(
+                Ensure.thatTheCurrentPage().currentUrl().contains(link),
                 VerifyDisplayed.element("Login Successfull")
         );
     }

@@ -32,8 +32,8 @@ public class RegisterStepDef {
         String firstName = firstName();
         String lastName = lastName();
         String fullname = firstName + " " + lastName;
-        String userName = firstName + new Random().nextInt(10);
-        String email = firstName + "@mail.com";
+        String userName = firstName + new Random().nextInt(100);
+        String email = firstName + new Random().nextInt(100) + "@mail.com";
         String phone = phoneNumber();
         String password = "12345";
 
@@ -73,16 +73,11 @@ public class RegisterStepDef {
         String fullname = firstName + " " + lastName;
         String userName = firstName + new Random().nextInt(10);
         String email = firstName;
-        String phone = phoneNumber();
-        String password = "12345";
 
         actor.attemptsTo(
                 InputText.onField("Register Fullname", fullname),
                 InputText.onField("Register Username", userName),
-                InputText.onField("Register Email", email),
-                InputText.onField("Register Phone", phone),
-                InputText.onField("Register Password", password),
-                InputText.onField("Register Confirm Password", password)
+                InputText.onField("Register Email", email)
         );
     }
 
@@ -116,27 +111,28 @@ public class RegisterStepDef {
     @Then("{actor} successful register")
     public void validationRegisterSuccess(Actor actor)throws Exception{
         actor.attemptsTo(
+                Ensure.thatTheCurrentPage().currentUrl().contains("/login"),
                 VerifyDisplayed.element("Register Successfull")
         );
     }
 
     @Then("{actor} can see show alert message email tidak valid")
-    public void validationRegisterFailed(Actor actor)throws Exception{
+    public void validationRegisterFailed1(Actor actor)throws Exception{
+        actor.attemptsTo(
+                VerifyDisplayed.element("Validate Email")
+        );
+    }
+    @Then("{actor} can see show popup alert message register failed")
+    public void validationRegisterFailed2(Actor actor)throws Exception{
         actor.attemptsTo(
                 VerifyDisplayed.element("Register Failed")
         );
     }
 
-    @And("{actor} direct to login page")
-    public void directloginPage(Actor actor)throws Exception{
-        actor.attemptsTo(
-                Ensure.thatTheCurrentPage().currentUrl().contains("/login")
-        );
-    }
 
     //Bot Random data
     public static String firstName(){
-        String firstNames[] = {"ahmad", "muhammad", "andrean", "agung", "dwi", "fitri", "afri", "syafii", "raju", "budi"};
+        String firstNames[] = {"rohim", "muhammad", "nuswan", "agung", "riki", "fitri", "afri", "syafii", "raju", "budi"};
         return firstNames[new Random().nextInt(firstNames.length)];
     }
 
