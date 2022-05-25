@@ -43,7 +43,7 @@ public class VerifyDisplayed {
             default:
                 throw new Exception("There is no element type: "+ elementType);
         }
-        WaitUntil.the(element, isVisible()).forNoMoreThan(5000).seconds();
+        WaitUntil.the(element, isVisible()).forNoMoreThan(1000).seconds();
         return Task.where("{0} verify element is displayed", Ensure.that(element).isDisplayed());
     }
 }

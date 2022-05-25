@@ -1,4 +1,4 @@
-@booking
+@bookingPositif
 Feature: Booking
 
   Scenario: User booked arena with login account
